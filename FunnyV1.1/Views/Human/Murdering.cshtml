@@ -1,0 +1,28 @@
+﻿@model List<FunnyV1.Models.Alien>
+
+@{
+    ViewBag.Title = "Murdering";
+}]
+<link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+<form method="post" action="">
+    <h3 style="margin-left:355px; margin-top:50px;">Your choice of murder</h3>
+    <input  type="text" id="inpu" name="descrition" style="margin-left:350px; margin-top:50px; width: 500px;  font-size:14px" />
+
+    <select id="op" class="form-control" id="alianoid" name="alianoid" style="margin-left:350px; margin-top:50px; width: 300px;font-size:14px">
+        @foreach (var alien in Model)
+        {
+            for (int i = 0; i < ViewBag.arrIndex.Count; ++i)
+            {
+                if (alien.Id == ViewBag.arrIndex[i])
+                {
+                    <option value=@alien.Id>@alien.Id - @alien.FirstName - @alien.SecondName - @alien.ThirdName - @alien.FourthName </option>
+
+                }
+            }
+        }
+    </select>
+
+
+    <input id="btn"  type="submit" value="Kill" class="btn btn-danger btn-sm" style="margin-left: 425px; margin-top:50px; padding: 50px 50px; font-size:20px" />
+    @*onclick="location.href='@Url.Action("Killing", "Human")'" />*@
+</form>

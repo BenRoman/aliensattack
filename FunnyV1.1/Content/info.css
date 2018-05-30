@@ -1,0 +1,30 @@
+﻿body {
+    background-image: url('Images/7135.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+h2 {
+    font-family: Courier New, Courier, monospace;
+    color: aliceblue;
+}
+
+h4 {
+    font-family: Courier New, Courier, monospace;
+    color: aliceblue;
+}
+#tabla {
+    font-family: Courier New, Courier, monospace;
+    color: aliceblue;
+    background-color: rgba(2, 122, 119, 0.3); 
+}
+#nav {
+    font-family: Courier New, Courier, monospace;
+    color: aliceblue;
+    background-color: rgba(0, 74, 82, 0.9);
+}
+#tex {
+    font-family: Courier New, Courier, monospace;
+    color: aliceblue;
+}

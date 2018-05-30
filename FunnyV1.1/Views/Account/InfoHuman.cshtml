@@ -1,0 +1,76 @@
+﻿@model FunnyV1.Models.Human
+
+@{
+    ViewBag.Title = "InfoHuman";
+}
+
+<h2>InfoHuman</h2>
+<link href="~/Content/info.css" rel="stylesheet" />
+<div>
+    <h4>Human</h4>
+    <hr />
+    <dl id="tabla" class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecondName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        @if (ViewBag.Description != null)
+        {
+
+            <dt>
+                Type
+            </dt>
+
+            <dd>
+                @ViewBag.Type
+            </dd>
+
+            <dt>
+                Description
+            </dt>
+
+            <dd>
+                @ViewBag.Description
+            </dd>
+        }
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

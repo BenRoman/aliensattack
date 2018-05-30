@@ -1,0 +1,25 @@
+﻿body {
+    background-image: url('Images/7135.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+h2 {
+    font-family: Courier New, Courier, monospace;
+    color: aliceblue;
+}
+h4 {
+    font-family: Courier New, Courier, monospace;
+    color: aliceblue;
+}
+#pole {
+    font-family: Courier New, Courier, monospace;
+    color: aliceblue;
+    border-radius: 4px;
+    border-color: aquamarine;
+}
+#inp {
+    background-color: rgba(2, 122, 119, 0.62);
+    color: aliceblue;
+}

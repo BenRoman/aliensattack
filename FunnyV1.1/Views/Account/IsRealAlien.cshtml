@@ -1,0 +1,13 @@
+﻿<form method="post" action="">
+    <h1 style="color:papayawhip;">@ViewBag.questions</h1>
+    <input type="hidden" id="rightanswer" name="rightanswer" value="@ViewBag.ra"/>
+    <select id="op" class="form-control" id="question" name="questions" style="margin-left:350px; margin-top:50px; width: 300px;font-size:14px">
+        @foreach (var str in ViewBag.answers)
+        {
+            <option value="@str">@str</option>
+        }
+    </select>
+
+    <input id="btn" type="submit" value="Проверочка" class="btn btn-default" style="margin-left: 425px; margin-top:50px; padding: 50px 50px; font-size:20px" />
+
+</form>

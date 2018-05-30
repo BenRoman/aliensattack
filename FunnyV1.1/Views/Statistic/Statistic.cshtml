@@ -1,0 +1,284 @@
+﻿@model List<FunnyV1.Models.Human>
+@{
+    ViewBag.Title = "Statistic";
+    FunnyV1.Models.UserContext db = new FunnyV1.Models.UserContext();
+    var aliens = db.Database.SqlQuery<FunnyV1.Models.Alien>("SELECT * FROM Aliens");
+    var people = db.Database.SqlQuery<FunnyV1.Models.Human>("SELECT * FROM Humen");
+}
+
+
+
+
+<div style="color:white; font-size:larger">
+    <hr />
+    <br />
+    <div>
+        <h4>№1</h4>
+        <form method="post" action="@Url.Action("FirstQuery", "Statistic")">
+            Для прибульця
+            <select class="form-control" id="inputAlien" name="inputAlien">
+                @foreach (var alien in aliens)
+                {
+                    <option value=@alien.Id>@alien.FirstName  @alien.SecondName @alien.ThirdName  @alien.FourthName</option>
+                }
+            </select>
+            знайти усіх людей, яких він викрадав хоча б
+            <input type="number" name="N" value="1" min="1" id="inputN">
+            разів за вказаний період (з
+            <input type="date" name="dateFrom" value="">
+            по
+            <input type="date" name="dateTo" value="">)
+            <br />
+            <br />
+            <div class="text-left">
+                <input type="submit" value="Go" class="btn btn-success btn-sm" />
+            </div>
+        </form>
+    </div>
+    <hr />
+    <br />
+    <div>
+        <h4>№2</h4>
+        <form method="post" action="@Url.Action("SecondQuery", "Statistic")">
+            Для людини
+            <select class="form-control" id="inputHuman" name="inputHuman">
+                @foreach (var human in people)
+                {
+                    <option value=@human.Id>@human.FirstName  @human.SecondName</option>
+                }
+            </select>
+            знайти усі кораблі, де вона побувала за вказаний період (з
+            <input type="date" name="dateFrom" value="">
+            по
+            <input type="date" name="dateTo" value="">)
+            <br />
+            <br />
+            <div class="text-left">
+                <input type="submit" value="Go" class="btn btn-success btn-sm" />
+            </div>
+        </form>
+    </div>
+    <hr />
+    <br />
+    <!--3-->
+    <div>
+        <h4>№3</h4>
+        <form method="post" action="@Url.Action("ThirdQuery", "Statistic")">
+            Для людини
+            <select class="form-control" id="inputHuman" name="inputHuman">
+                @foreach (var human in people)
+                {
+                    <option value=@human.Id>@human.FirstName  @human.SecondName</option>
+                }
+            </select>
+            знайти усіх прибульців, які викрадали її хоча б
+            <input type="number" name="N" value="1" min="1" id="inputN">
+            разів за вказаний період (з
+            <input type="date" name="dateFrom" value="">
+            по
+            <input type="date" name="dateTo" value="">)
+            <br /><br />
+            <div class="text-left">
+                <input type="submit" value="Go" class="btn btn-success btn-sm" />
+            </div>
+        </form>
+    </div>
+    <hr />
+    <br />
+    <!--4-->
+    <div>
+        <h4>№4</h4>
+        <form method="post" action="@Url.Action("FourthQuery", "Statistic")">
+            Для людини
+            <select class="form-control" id="inputHuman" name="inputHuman">
+                @foreach (var human in people)
+                {
+                    <option value=@human.Id>@human.FirstName  @human.SecondName</option>
+                }
+            </select>
+            знайти усіх прибульців, яких вона вбила за вказаний період (з
+            <input type="date" name="dateFrom" value="">
+            по
+            <input type="date" name="dateTo" value="">)
+            <br /><br />
+            <div class="text-left">
+                <input type="submit" value="Go" class="btn btn-success btn-sm" />
+            </div>
+        </form>
+    </div>
+    <hr />
+    <br />
+    <!--5-->
+    <div>
+        <h4>№5</h4>
+        <form method="post" action="@Url.Action("FifthQuery", "Statistic")">
+            Для людини
+            <select class="form-control" id="inputHuman" name="inputHuman">
+                @foreach (var human in people)
+                {
+                    <option value=@human.Id>@human.FirstName  @human.SecondName</option>
+                }
+            </select>
+            знайти усіх прибульців, які викрадали її та були вбиті нею ж
+            <br /><br />
+            <div class="text-left">
+                <input type="submit" value="Go" class="btn btn-success btn-sm" />
+            </div>
+        </form>
+    </div>
+    <hr />
+    <br />
+    <!--6-->
+    <div>
+        <h4>№6</h4>
+        <form method="post" action="@Url.Action("SixthQuery", "Statistic")">
+            Знайти усіх прибульців, які викрали щонайменше
+            <input type="number" name="N" value="1" min="1" id="inputN">
+            різних людей за вказаний період (з
+            <input type="date" name="dateFrom" value="">
+            по
+            <input type="date" name="dateTo" value="">)
+            <br /><br />
+            <div class="text-left">
+                <input type="submit" value="Go" class="btn btn-success btn-sm" />
+            </div>
+        </form>
+    </div>
+    <hr />
+    <br />
+    <!--7-->
+    <div>
+        <h4>№7</h4>
+        <form method="post" action="@Url.Action("SeventhQuery", "Statistic")">
+            Знайти усіх людей, яких викрадали хоча б
+            <input type="number" name="N" value="1" min="1">
+            разів за вказаний період (з
+            <input type="date" name="dateFrom" value="">
+            по
+            <input type="date" name="dateTo" value="">)
+            <br /><br />
+            <div class="text-left">
+                <input type="submit" value="Go" class="btn btn-success btn-sm" />
+            </div>
+        </form>
+    </div>
+    <hr />
+    <br />
+    <!--8-->
+    <div>
+        <h4>№8</h4>
+        <form method="post" action="@Url.Action("EighthQuery", "Statistic")">
+            Знайти усі спільні екскурсії та експерименти для прибульця
+            <select class="form-control" id="inputAlien" name="inputAlien">
+                @foreach (var alien in aliens)
+                {
+                    <option value=@alien.Id>@alien.FirstName  @alien.SecondName @alien.ThirdName  @alien.FourthName</option>
+                }
+            </select>
+            та людини
+            <select class="form-control" id="inputHuman" name="inputHuman">
+                @foreach (var human in people)
+                {
+                    <option value=@human.Id>@human.FirstName  @human.SecondName</option>
+                }
+            </select>
+            за вказаний період (з
+            <input type="date" name="dateFrom" value="">
+            по
+            <input type="date" name="dateTo" value="">)
+            <br /><br />
+            <div class="text-left">
+                <input type="submit" value="Go" class="btn btn-success btn-sm" />
+            </div>
+        </form>
+    </div>
+    <hr />
+    <br />
+    <!--9-->
+    <div>
+        <h4>№9</h4>
+        <form method="post" action="@Url.Action("NinethQuery", "Statistic")">
+            Для прибульця
+            <select class="form-control" id="inputAlien" name="inputAlien">
+                @foreach (var alien in aliens)
+                {
+                    <option value=@alien.Id>@alien.FirstName  @alien.SecondName @alien.ThirdName  @alien.FourthName</option>
+                }
+            </select>
+            та кожної екскурсії, яку він проводив, знайти скільки разів за вказаний період (з
+            <input type="date" name="dateFrom" value="">
+            по
+            <input type="date" name="dateTo" value="">)
+            він проводив екскурсію для щонайменше
+            <input type="number" name="N" value="1" min="1">
+            людей
+            <br /><br />
+            <div class="text-left">
+                <input type="submit" value="Go" class="btn btn-success btn-sm" />
+            </div>
+        </form>
+    </div>
+    <hr />
+    <br />
+    <!--10-->
+    <div>
+        <h4>№10</h4>
+        <form method="post" action="@Url.Action("TenthQuery", "Statistic")">
+            Для людини
+            <select class="form-control" id="inputHuman" name="inputHuman">
+                @foreach (var human in people)
+                {
+                    <option value=@human.Id>@human.FirstName  @human.SecondName</option>
+                }
+            </select>
+            та кожного експерименту, у якому вона брала участь, знайти скільки разів за вказаний період (з
+            <input type="date" name="dateFrom" value="">
+            по
+            <input type="date" name="dateTo" value="">)
+            експеримент над нею проводили щонайменше
+            <input type="number" name="N" value="1" min="1">
+            прибульців
+            <br /><br />
+            <div class="text-left">
+                <input type="submit" value="Go" class="btn btn-success btn-sm" />
+            </div>
+        </form>
+    </div>
+    <hr />
+    <br />
+    <!--11-->
+    <div>
+        <h4>№11</h4>
+        <form method="post" action="@Url.Action("EleventhQuery", "Statistic")">
+            Знайти сумарну кількість викрадень по місяцях
+            <br /><br />
+            <div class="text-left">
+                <input type="submit" value="Go" class="btn btn-success btn-sm" />
+            </div>
+        </form>
+    </div>
+    <hr />
+    <br />
+    <!--12-->
+    <div>
+        <h4>№12</h4>
+        <form method="post" action="@Url.Action("TwelvethQuery", "Statistic")">
+            Вивести кораблі у порядку спадання сумарної кількості експериментів,
+            що були проведені на кораблі за участі прибульця
+            <select class="form-control" id="inputAlien" name="inputAlien">
+                @foreach (var alien in aliens)
+                {
+                    <option value=@alien.Id>@alien.FirstName  @alien.SecondName @alien.ThirdName  @alien.FourthName</option>
+                }
+            </select>
+            протягом вказаного періоду (з
+            <input type="date" name="dateFrom" value="">
+            по
+            <input type="date" name="dateTo" value="">)
+            <br /><br />
+            <div class="text-left">
+                <input type="submit" value="Go" class="btn btn-success btn-sm" />
+            </div>
+        </form>
+    </div>
+</div>

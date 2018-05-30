@@ -1,0 +1,19 @@
+﻿@model List<string[]>
+
+@{
+    ViewBag.Title = "Statistic";
+}
+
+<link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+
+<table class="table table-striped table-bordered table-sm">
+    @foreach (var str in Model)
+    {
+        <tr>
+             @foreach (var item in str)
+             {
+                 <td id="tab">@item</td>
+             }
+        </tr>
+    }
+</table>

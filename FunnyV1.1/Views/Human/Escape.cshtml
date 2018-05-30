@@ -1,0 +1,15 @@
+﻿<form method="post" action="">
+    <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+    @if (ViewBag.ship != null)
+    {
+        <img id="img_logo" alt="Logo" src="@Url.Content("~/Content/images/alienrun1W.gif")" style="margin-left: 400px;  padding: 100px 100px; font-size:20px"/>
+        
+        <br />
+        <input type="submit" value="Run" class="btn btn-danger btn-sm" style="margin-left: 475px; margin-top:100px; padding: 100px 100px; font-size:20px" />
+    }
+    else
+    {
+        <h1>You are free.</h1>
+    }
+
+</form>

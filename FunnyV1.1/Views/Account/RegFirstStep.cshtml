@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "RegFirstStep";
+}
+
+<h2>RegFirstStep</h2>
+<link href="~/Content/first_step.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    <select id="select" name="type" class="form-control">
+        <option style="font-family: Courier New, Courier, monospace" value="alien">alien</option>
+        <option style="font-family: Courier New, Courier, monospace" value="human">human</option>
+    </select>
+    <br />
+    <input id="button" type="submit" />
+}
+
